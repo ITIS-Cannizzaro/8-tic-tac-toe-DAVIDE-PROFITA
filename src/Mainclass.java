@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Mainclass implements ActionListener {
 	
-	
+	static boolean daMettereX=true;
 	static JButton[][] grigliaBottoni=new JButton[3][3];
 	
 	public static void main (String[] args) {
@@ -36,11 +36,20 @@ public class Mainclass implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+
 		for(int i =0;i<grigliaBottoni.length;i++) {
 			for(int j=0;j<grigliaBottoni[i].length;j++) {
 				if(grigliaBottoni[i][j]==e.getSource()) {
-					grigliaBottoni[i][j].setText("x");
+					if(grigliaBottoni[i][j].getText().equals(null)) {
+						if(daMettereX){
+							grigliaBottoni[i][j].setText("X");
+							daMettereX=false;
+						}else{
+							grigliaBottoni[i][j].setText("O");
+							daMettereX=true;
+						}
+					}
+					
 				}
 			}
 		}
@@ -48,4 +57,3 @@ public class Mainclass implements ActionListener {
 	}
 
 }
-
