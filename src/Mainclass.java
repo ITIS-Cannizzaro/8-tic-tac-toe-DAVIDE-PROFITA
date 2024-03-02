@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 public class Mainclass implements ActionListener {
@@ -8,18 +7,18 @@ public class Mainclass implements ActionListener {
 	
 	static JButton[][] grigliaBottoni=new JButton[3][3];
 	
-	public static void main(String[] args) 
-	{
+	public static void main (String[] args) {
 		Mainclass m = new Mainclass();
 	}
 	
-	public Mainclass()
-	{
+	public Mainclass() {
+		
+		
 		JFrame frame=new JFrame("Tris");
 		JPanel panel= new JPanel();
 			
 		frame.add(panel);
-		GridLayout layout= new GridLayout(3,3);
+		GridLayout layout= new GridLayout(4,3);
 		
 		for(int i=0;i<grigliaBottoni.length;i++) {
 			for(int j=0;j<grigliaBottoni[i].length;j++) {
@@ -49,3 +48,4 @@ public class Mainclass implements ActionListener {
 	}
 
 }
+
